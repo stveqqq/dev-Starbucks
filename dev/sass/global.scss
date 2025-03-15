@@ -1,9 +1,44 @@
 html {
-    font-family: 'Montserrat';
-    font-size: 16px;
+    font-family: $font-primary;
+    font-size: $font-size;
+}
+
+body {
+    background-color: $bg-body;
+    color: $color-text;
+}
+
+section {
+    margin-bottom: $section-margin;
+}
+
+.logo {
+    max-width: 195px;
+}
+
+.container {
+    max-width: 1278px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.show {
+    display: block !important;
 }
 
 ::selection {
-    background-color: #237249;
-    color: #000;
+    background-color: $secondary-color;
+    color: $bg-footer;
 }

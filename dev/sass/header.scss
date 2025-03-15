@@ -1,0 +1,70 @@
+.header {
+    padding: 48px 0;
+
+    .container {
+        display: flex;
+        gap: var(--gap);
+        --gap: 94px;
+    }
+
+    &-nav {
+        display: flex;
+        gap: var(--gap);
+
+        &__item {
+            font-size: 20px;
+            color: $color-text;
+
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+    }
+}
+
+.mobile-container {
+    display: flex;
+    align-items: center;
+}
+
+.btn-burger {
+    --width: 42px;
+    width: var(--width);
+    margin-left: auto;
+    position: relative;
+
+    span {
+        @include burger;
+
+        &:before,
+        &:after {
+            @include burger;
+            content: "";
+        }
+
+        &:before {
+            top: 8px;
+        }
+
+        &:after {
+            top: 17px;
+
+        }
+    }
+
+    &.active{
+        span {
+            transform: rotate(-45deg);
+
+
+            &:before {
+                opacity: 0;
+                transform: rotate(90deg) translate(-15px, 0px);
+            }
+
+            &:after {
+                transform: rotate(90deg) translate(-15px, 0px);
+            }
+        }
+    }
+}
