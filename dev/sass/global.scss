@@ -1,15 +1,77 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 html {
     font-family: $font-primary;
     font-size: $font-size;
+    scroll-behavior: smooth;
 }
 
 body {
     background-color: $bg-body;
     color: $color-text;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 section {
     margin-bottom: $section-margin;
+}
+
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    color: $color-text;
+
+    &:hover {
+        color: $secondary-color;
+    }
+}
+
+.btn-arrow {
+    --size: 84px;
+    --icon-size: 35px;
+    --border-radius: 29px;
+    --border-width: 3px;
+    width: calc(var(--size) - var(--border-width) * 2);
+    height: calc(var(--size) - var(--border-width) * 2);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    background-color: $bg-footer;
+    position: relative;
+    @include flex-centered;
+    
+    &:before {
+        content: "";
+        position: absolute;
+        width: calc(100% + var(--border-width));
+        height: calc(100% + var(--border-width));
+        left: 50%;
+        top: 50%;
+        background-image: $background-gradient;
+        border-radius: var(--border-radius);
+        z-index: -1;
+        transform: translate(-50%, -50%);
+    }
+
+}
+
+.icon-svg {
+    height: var(--icon-size);
+    width: var(--icon-size);
 }
 
 .logo {
@@ -24,18 +86,24 @@ section {
     margin-right: auto;
 }
 
-a {
-    text-decoration: none;
-}
-
-button {
-    border: none;
-    outline: none;
-    background-color: transparent;
+.text-gradient {
+    background-clip: text;
+    color: transparent;
+    background-image: $background-gradient;
 }
 
 .show {
     display: block !important;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.svg-sprite {
+    visibility: hidden;
+    height: 0;
+    width: 0;
 }
 
 ::selection {
