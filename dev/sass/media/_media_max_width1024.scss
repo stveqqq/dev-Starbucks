@@ -1,6 +1,6 @@
 @media screen and (max-width: 1024px) {
     .header {
-        padding: 34px 0;
+        padding: 35px 0;
 
         .container {
             gap: 0;
@@ -20,11 +20,20 @@
 
     .logo {
         max-width: 114px;
+        margin: 2px 0 0 0;
     }
 
     .container {
         padding-left: 25px;
         padding-right: 25px;
+    }
+
+    .btn-arrow {
+        --size: 56px;
+        --border-radius: 18px;
+        --border-width: 3px;
+        --icon-size: 27px;
+        padding: 10px;
     }
 
     .mobile-container {
@@ -33,5 +42,57 @@
         left: 0;
         top: 88px;
         width: 100%;
+    }
+
+    .footer {
+
+        padding: 21px 0 10px;
+
+        .logo {
+            max-width: 134px;
+        }
+
+        &-row {
+            &:first-child {
+                --gap: 36px;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: var(--gap);
+                margin-bottom: var(--gap);
+
+                .btn.btn-arrow {
+                    margin-left: auto;
+                }
+            }
+        }
+
+        &-nav {
+            order: 1;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 4px 0 0 0;
+            gap: 0 12px;
+
+            &__item {
+                font-size: 15px;
+            }
+
+            &__column-title {
+                font-size: 15px;
+            }
+
+            &__item:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &-phone {
+            font-size: 16px;
+        }
+
+        &-instagram {
+            max-width: 32px;
+        }
     }
 }
