@@ -1,6 +1,4 @@
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
@@ -244,6 +242,39 @@ a {
     background-clip: text;
     color: transparent;
     background-image: $background-gradient;
+}
+
+.label {
+    --size: 184px;
+    --this-size: calc(var(--size) - 24px);
+    width: var(--this-size);
+    height: var(--this-size);
+    font-size: 38px;
+    font-weight: 500;
+    @include flex-centered;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: -4.56px 15.52px 26.48px #143E2875;
+    position: relative;
+
+    &.label_text-large  {
+        font-size: 56px;
+    }
+
+    &.label_text-sm {
+        --size: 133px;
+        font-size: 32px;
+    }
+
+    &::before {
+        content: var(--content);
+        background: url(./assets/img/label.png) center/contain no-repeat;
+        width: var(--size);
+        height: var(--size);
+        @include transform-centered;
+        @include flex-centered;
+    }
 }
 
 .show {
