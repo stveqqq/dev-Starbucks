@@ -1,3 +1,40 @@
 @media screen and (max-width: 767px) {
 
+    section {
+        margin-bottom: $section-mobile-margin;
+
+        &.banner {
+            margin-bottom: 50px;
+        }
+    }
+
+    h6,
+    .h6 {
+        font-size: 16px;
+    }
+
+    .btn,
+    .btn.btn-secondary {
+        font-size: 16px;
+        padding: 15.5px 35px;
+    }
+
+    .banner {
+        .btn-row {
+            margin-bottom: 36px;
+        }
+
+        &-advantage__title {
+            font-size: 42px;
+            margin-bottom: 8px;
+        }
+
+        &-advantage {
+            width: 82px;
+        }
+
+        &-advantage__description {
+            font-size: 14px;
+        }
+    }
 }

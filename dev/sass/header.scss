@@ -1,5 +1,10 @@
 .header {
     padding: 48px 0;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    position: fixed;
+    width: 100%;
+    background-color: #0b0c0d5c;
 
     .container {
         display: flex;
@@ -28,6 +33,7 @@
     width: var(--width);
     margin-left: auto;
     position: relative;
+    cursor: pointer;
 
     span {
         @include burger;
