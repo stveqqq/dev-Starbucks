@@ -137,6 +137,7 @@ a {
 }
 
 .btn {
+    --icon-size: 28px;
     padding: 23px 53px;
     border-radius: 45px;
     display: inline-block;
@@ -225,6 +226,8 @@ a {
 .icon-svg {
     height: var(--icon-size);
     width: var(--icon-size);
+    vertical-align: middle;
+    margin-top: -4px;
 }
 
 .logo {

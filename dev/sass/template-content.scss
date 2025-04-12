@@ -1,0 +1,42 @@
+.template-content {
+    --translate-y: 36px;
+    --translate-x: 45px;
+    padding-top: var(--translate-y);
+    display: flex;
+    justify-content: space-between;
+    gap: var(--translate-x);
+
+    &__img-box {
+        position: relative;
+        max-width: 465px;
+        width: 100%;
+
+        img {
+            transform: translate(var(--translate-x), calc(var(--translate-y) * -1));
+            mask: url(./assets/img/mask.svg) no-repeat;
+        }
+
+        .label {
+            position: absolute;
+            right: -35px;
+            top: -15px;
+            z-index: 1;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: $primary-color;
+            right: 0;
+            top: 0;
+            mask: url(./assets/img/mask.svg) no-repeat;
+        }
+    }
+
+    &__info-box {
+        max-width: 457px;
+        width: 100%;
+    }
+}
