@@ -157,7 +157,6 @@ a {
         height: 0;
         background: url(./assets/img/template-decoration-green.png) center/contain no-repeat;
         transition: .4s;
-        z-index: -1;
     }
 
     &:hover {
@@ -189,7 +188,6 @@ a {
             background-image: linear-gradient(173deg, #dadada 0%, rgba(218, 218, 218, 0) 100%);            ;
             width: calc(100% + 5px);
             height: calc(100% + 5px);
-            z-index: -1;
             border-radius: 45px;
         }
     }
@@ -222,7 +220,6 @@ a {
         top: 50%;
         background-image: $background-gradient;
         border-radius: var(--border-radius);
-        z-index: -1;
         transform: translate(-50%, -50%);
     }
 
@@ -305,6 +302,16 @@ a {
 
 .d-flex {
     display: flex !important;
+}
+
+.hovered {
+    animation: 1.5s hovered infinite ease-in-out alternate;
+}
+
+@keyframes hovered {
+    to {
+        transform: scale(1.2);
+    }
 }
 
 .svg-sprite {
