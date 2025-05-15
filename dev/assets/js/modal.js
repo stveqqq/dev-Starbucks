@@ -9,7 +9,7 @@ function closeModal(event) {
     if (event.target.hasAttribute('data-close-modal')) {
         event.target.closest('.modal').classList.remove('d-flex')
         body.classList.remove('overflow-hidden')
-    }
+    } 
 }
 
 function showModal(modal) {
