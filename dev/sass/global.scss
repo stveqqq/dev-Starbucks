@@ -123,6 +123,7 @@ button {
     border: none;
     outline: none;
     background-color: transparent;
+    font-size: 24px;
 }
 
 a {
@@ -230,6 +231,7 @@ a {
     width: var(--icon-size);
     vertical-align: middle;
     margin-top: -4px;
+    cursor: pointer;
 }
 
 .logo {
@@ -302,16 +304,6 @@ a {
 
 .d-flex {
     display: flex !important;
-}
-
-.hovered {
-    animation: 1.5s hovered infinite ease-in-out alternate;
-}
-
-@keyframes hovered {
-    to {
-        transform: scale(1.2);
-    }
 }
 
 .svg-sprite {
