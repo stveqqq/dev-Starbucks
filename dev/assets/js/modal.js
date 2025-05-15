@@ -4,17 +4,25 @@ const closeTrigers = document.querySelectorAll('[data-close-modal]')
 
 function closeModal(event) {
     event.preventDefault()
-    console.log(event.target);
 
     if (event.target.hasAttribute('data-close-modal')) {
         event.target.closest('.modal').classList.remove('d-flex')
         body.classList.remove('overflow-hidden')
     } 
-}
+
+        if (event.target.closest('.modal').id == 'cooking') {
+            stopVideo()
+        }
+    }
+
 
 function showModal(modal) {
     modal.classList.add('d-flex')
     body.classList.add('overflow-hidden')
+
+    if (modal.id == 'cooking') {
+        playVideo()
+    }
 }
 
 trigers.forEach(
