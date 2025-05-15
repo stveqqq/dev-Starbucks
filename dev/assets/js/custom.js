@@ -1,4 +1,4 @@
-const burger = document.querySelector('.btn-burger');
+const burger = document.querySelector('.btn-burger')
 const mobileContainer = document.querySelector('.mobile-container')
 
 function toggleMobileContainer() {
@@ -12,7 +12,8 @@ const label = document.querySelectorAll('.label')
 const btn = document.querySelectorAll('.btn')
 
 
-const swiper = new Swiper('.swiper-product', {
+
+const swiperProduct = new Swiper('.swiper-product', {
     slidesPerView: 4,
     loop: true,
     speed: 500,
@@ -45,4 +46,28 @@ const swiper = new Swiper('.swiper-product', {
             spaceBetween: 48,
         }
     }
+
 });
+ 
+let swiperEvents;
+
+function checkMediaQuery() {
+    if (window.matchMedia("(min-width: 1025px)").matches) {
+        swiperEvents?.destroy();
+        swiperEvents = null;
+    } else if (!swiperEvents) {
+        swiperEvents = new Swiper('.swiper-events', {
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-events-button-next',
+                prevEl: '.swiper-events-button-prev',
+            },
+        });
+    }
+}
+
+checkMediaQuery();
+window.addEventListener('resize', checkMediaQuery);
+window.addEventListener('orientationchange', () => setTimeout(checkMediaQuery, 300));
+
+  
